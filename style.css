@@ -12,6 +12,13 @@ body {
     color: #fff; 
 }
 
+.container{
+    padding: 20px;
+    background-color: #292929;
+    border: 2px solid #3E3E3E;
+    border-radius: 16px;
+    padding-bottom: 4rem;
+}
 .seat {
     background-color: #292929;
     height: 30px;

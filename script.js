@@ -35,10 +35,13 @@ function movieOption() {
 }
 
 ticketButton.addEventListener("click", function () { 
-    counts.textContent = `${number} adet koltuk seçildi. ${price} ücret ödenecek.`;
+    counts.textContent = `${number} adet koltuk seçildi. Ücret ${price} TL ücret ödenecek.`;
     p.appendChild(counts);
-    if(price!==0 && number!==0){
+    if(price!==0){
         return price;
+    }
+    else if (number==0){
+        counts.textContent="Lütfen Koltuk seçiniz.";  
     }
     else{
         counts.textContent="Lütfen Film seçiniz.";    
