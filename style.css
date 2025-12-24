@@ -1,5 +1,8 @@
+*{
+        font-family:monospace;
+}
 body {
-    background-color: #292929;
+    background: linear-gradient(180deg, #121212 15%, #383838 34.44%, #121212 56%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,15 +10,15 @@ body {
     height: 100vh;
     margin: 0;
     color: #fff; 
-    font-family:monospace;
 }
 
 .seat {
-    background-color: #444451;
+    background-color: #292929;
     height: 30px;
     width: 30px;
     margin: 3px;
     border-radius: 5px;
+    border: 1px solid gray;
 }
 
 
@@ -31,6 +34,7 @@ body {
     cursor: pointer;
     transform: scale(1.1);
     background-color:grey;
+    border: 1px solid white;
 }
 
 .seat.selected{
@@ -47,7 +51,7 @@ body {
 .screen {
     background-color: #fff;
     height: 50px;
-    width: 400px;
+    width: 415px;
     margin: 20px 0;
     box-shadow: 0 3px 8px rgba(255, 255, 255, 0.7);
 }
@@ -58,13 +62,37 @@ body {
     align-items: center;
     margin: 20px 0;
 }
-.movie-list select {
+.movie-list #movie {
     width: 200px;
     text-align: center;
     background-color: #292929;
     color: white;
     height: 30px;
-    font-family: inherit;
+}
+
+.movie-list #movie:hover{
+    background-color: #444451;
+    border: 1px solid white;
+}
+
+.take-ticket{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.take-ticket #ticket-button{
+    width: 100px;
+    height: 30px;
+    background-color: #292929;
+    color: white;
+    border: 1px solid gray;
+    cursor: pointer;    
+}
+
+.take-ticket #ticket-button:hover{
+    background-color: #444451;
+    border: 1px solid white;
 }
 
 .info {
@@ -74,7 +102,7 @@ body {
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    font-weight:bold; 
+    font-weight: bold; 
 }
 
 .info .seat {

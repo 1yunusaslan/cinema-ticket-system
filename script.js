@@ -2,8 +2,11 @@ const seats = document.getElementsByClassName('seat');
 const counts = document.getElementById('count');
 const p = document.getElementById('text');
 const selectMovie = document.getElementById('movie');
+const ticketButton = document.getElementById('ticket-button');
+
 
 let number = 0;
+let price = 0;
 
 function selectSeat() {  
     for (let i = 0; i < seats.length; i++) {
@@ -20,22 +23,28 @@ function selectSeat() {
         
         e.target.classList.add('selected');
         number++;
-        counts.textContent = `${number} adet koltuk seçildi.`;
-        p.appendChild(counts);
-
-        selectChance();
-      
     });
 };
 }
 
-function selectChance() {  
-    selectMovie.addEventListener("change", function () {  
-    let price = number*this.value;
-    counts.textContent = `${number} adet koltuk seçildi. ${price} ücret ödenecek.`;
-    });
-    p.appendChild(counts);
-        
+function movieOption() {  
+    selectMovie.addEventListener("change", function () {
+    //film seçeneği değiştikçe price değeri değişicek      
+    price = number*this.value;
+    }); 
 }
 
+ticketButton.addEventListener("click", function () { 
+    counts.textContent = `${number} adet koltuk seçildi. ${price} ücret ödenecek.`;
+    p.appendChild(counts);
+    if(price!==0 && number!==0){
+        return price;
+    }
+    else{
+        counts.textContent="Lütfen Film seçiniz.";    
+    }
+
+})
+
 selectSeat();
+movieOption();
